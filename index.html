@@ -1,43 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Student Result Portal</title>
+  <title>Tauranga Boys College - Student Portal</title>
   <style>
-    body { font-family: Arial; text-align: center; background: #f4f6f8; }
-    .box { background: white; padding: 20px; margin: 60px auto; width: 90%; max-width: 400px; border-radius: 10px; }
-    input { width: 90%; padding: 10px; margin: 10px 0; }
-    button { padding: 10px 20px; background: #007BFF; color: white; border: none; }
-    table { width: 100%; margin-top: 20px; border-collapse: collapse; }
-    th, td { padding: 10px; border: 1px solid #ddd; }
-    th { background: #007BFF; color: white; }
+    body {
+      font-family: Arial;
+      background: #eef2f7;
+      margin: 0;
+      text-align: center;
+    }
+    .header {
+      background: #002b5c;
+      color: white;
+      padding: 15px;
+      font-size: 20px;
+    }
+    .box {
+      background: white;
+      padding: 25px;
+      margin: 60px auto;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 12px 20px;
+      background: #002b5c;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 95%;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+    }
+    th {
+      background: #002b5c;
+      color: white;
+    }
+    .result-box {
+      text-align: left;
+    }
+    .summary {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f4f6f8;
+      border-radius: 8px;
+    }
     #result { display: none; }
   </style>
 </head>
 <body>
 
-<div class="box" id="loginBox">
-  <h2>Tauranga Boys College</h2>
-  <h3>Result Login</h3>
-
-  <input type="text" id="roll" placeholder="Enter Roll Number">
-  <input type="email" id="email" placeholder="Enter Email">
-
-  <button onclick="checkResult()">View Result</button>
+<div class="header">
+  Tauranga Boys College - Official Result Portal
 </div>
 
-<div class="box" id="result">
-  <h2>Student Result</h2>
+<div class="box" id="loginBox">
+  <h3>Student Login</h3>
+  <input type="text" id="roll" placeholder="Roll Number">
+  <input type="email" id="email" placeholder="Email Address">
+  <button onclick="checkResult()">Login</button>
+</div>
+
+<div class="box result-box" id="result">
+  <h2>End of Year Result</h2>
+
   <p><strong>Name:</strong> Harnoor Singh</p>
-  <p><strong>Grade:</strong> 10th</p>
+  <p><strong>Grade:</strong> 10</p>
+  <p><strong>Roll No:</strong> 1599</p>
+  <p><strong>Session:</strong> 2025–2026</p>
 
   <table>
-    <tr><th>Subject</th><th>Grade</th></tr>
-    <tr><td>Mathematics</td><td>5M</td></tr>
-    <tr><td>English</td><td>5A</td></tr>
-    <tr><td>Science</td><td>5M</td></tr>
-    <tr><td>Social Studies</td><td>5A</td></tr>
-    <tr><td>Health</td><td>5M</td></tr>
+    <tr>
+      <th>Subject</th>
+      <th>Grade</th>
+      <th>Percentage</th>
+    </tr>
+    <tr><td>Mathematics</td><td>5E</td><td>91%</td></tr>
+    <tr><td>English</td><td>5M</td><td>84%</td></tr>
+    <tr><td>Science</td><td>5E</td><td>89%</td></tr>
+    <tr><td>Social Studies</td><td>5A</td><td>78%</td></tr>
+    <tr><td>Health</td><td>5M</td><td>82%</td></tr>
   </table>
+
+  <div class="summary">
+    <p><strong>Overall Percentage:</strong> 85%</p>
+    <p><strong>Final Grade:</strong> 5E</p>
+    <p><strong>Status:</strong> Passed</p>
+  </div>
 </div>
 
 <script>
@@ -46,13 +110,15 @@ function checkResult() {
   var email = document.getElementById("email").value;
 
   if(roll === "1599" && email !== "") {
-    document.getElementById("loginBox").innerHTML = "<h3>Verifying...</h3>";
+    document.getElementById("loginBox").innerHTML = "<h3>Verifying credentials...</h3>";
+
     setTimeout(() => {
       document.getElementById("loginBox").style.display = "none";
       document.getElementById("result").style.display = "block";
-    }, 1500);
+    }, 1800);
+
   } else {
-    alert("Invalid Roll Number or Email");
+    alert("Invalid login details");
   }
 }
 </script>
