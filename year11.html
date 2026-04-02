@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Year 11 Results</title>
+  <title>Year 11 Term 1 Report</title>
 
   <style>
     body {
       font-family: Arial;
-      background: #eef2f7;
+      background: #e9edf2;
       margin: 0;
-      text-align: center;
     }
 
-    .header {
-      background: #002b5c;
-      color: white;
-      padding: 15px;
-      font-size: 20px;
-    }
-
-    .container {
-      background: white;
+    .page {
       width: 800px;
       margin: 40px auto;
-      padding: 30px;
-      text-align: left;
+      background: white;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    h2 {
-      text-align: center;
+    .center { text-align: center; }
+
+    .logo {
+      width: 80px;
+      margin-bottom: 10px;
     }
+
+    h2 { margin: 5px 0; }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 15px;
+      margin-top: 20px;
     }
 
     th, td {
-      border: 1px solid #000;
+      border: 1px solid black;
       padding: 10px;
       text-align: center;
     }
@@ -47,81 +44,78 @@
       color: white;
     }
 
-    .term {
-      margin-top: 30px;
+    .summary {
+      margin-top: 20px;
+      border: 1px solid black;
+      padding: 15px;
     }
 
-    .pending {
-      text-align: center;
-      padding: 20px;
-      background: #f4f6f8;
-      border: 1px dashed #aaa;
+    .signature {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
     }
 
     .back {
+      display: block;
       margin-top: 20px;
-      display: inline-block;
-      padding: 10px 15px;
-      background: #002b5c;
-      color: white;
+      text-align: center;
       text-decoration: none;
+      color: white;
+      background: #002b5c;
+      padding: 10px;
     }
   </style>
 </head>
 
 <body>
 
-<div class="header">
-  Tauranga Boys College - Year 11 Results
-</div>
+<div class="page">
 
-<div class="container">
-
-  <h2>Year 11 Academic Record (2026)</h2>
+  <div class="center">
+    <img src="logo.png" class="logo">
+    <h2>Tauranga Boys College</h2>
+    <h3>Year 11 - Term 1 Report (2026)</h3>
+  </div>
 
   <p><strong>Name:</strong> Harnoor Singh</p>
-  <p><strong>Roll No:</strong> 1599</p>
+  <p><strong>Roll Number:</strong> 1599</p>
 
-  <!-- TERM 1 -->
-  <div class="term">
-    <h3>Term 1 Results</h3>
+  <table>
+    <tr>
+      <th>Subject</th>
+      <th>Grade</th>
+      <th>%</th>
+      <th>Teacher Comment</th>
+    </tr>
 
-    <table>
-      <tr>
-        <th>Subject</th>
-        <th>Grade</th>
-        <th>%</th>
-      </tr>
+    <tr><td>Mathematics</td><td>5M</td><td>84%</td><td>Good understanding, needs consistency</td></tr>
+    <tr><td>English</td><td>5M</td><td>81%</td><td>Strong writing skills</td></tr>
+    <tr><td>Science</td><td>5E</td><td>85%</td><td>Excellent analytical ability</td></tr>
+    <tr><td>Social Studies</td><td>5A</td><td>77%</td><td>Needs deeper evaluation skills</td></tr>
+    <tr><td>Health</td><td>5M</td><td>82%</td><td>Active participation in class</td></tr>
+  </table>
 
-      <tr><td>Mathematics</td><td>5E</td><td>92%</td></tr>
-      <tr><td>English</td><td>5M</td><td>85%</td></tr>
-      <tr><td>Science</td><td>5E</td><td>90%</td></tr>
-      <tr><td>Social Studies</td><td>5A</td><td>79%</td></tr>
-      <tr><td>Health</td><td>5M</td><td>83%</td></tr>
-    </table>
-
-    <p><strong>Average:</strong> 86%</p>
+  <div class="summary">
+    <p><strong>Average:</strong> 82%</p>
+    <p><strong>Overall Grade:</strong> 5M</p>
+    <p><strong>Attendance:</strong> 93%</p>
+    <p><strong>Teacher Remark:</strong> Showing steady progress this term.</p>
   </div>
 
-  <!-- TERM 2 -->
-  <div class="term">
-    <h3>Term 2 Results</h3>
-    <div class="pending">Results not yet available</div>
+  <div class="signature">
+    <div>
+      ___________________<br>
+      Class Teacher
+    </div>
+
+    <div>
+      ___________________<br>
+      Principal
+    </div>
   </div>
 
-  <!-- TERM 3 -->
-  <div class="term">
-    <h3>Term 3 Results</h3>
-    <div class="pending">Results not yet available</div>
-  </div>
-
-  <!-- TERM 4 -->
-  <div class="term">
-    <h3>Term 4 Results</h3>
-    <div class="pending">Results not yet available</div>
-  </div>
-
-  <a href="index.html" class="back">⬅ Back to Portal</a>
+  <a href="index.html" class="back">⬅ Back to Dashboard</a>
 
 </div>
 
