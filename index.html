@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Result Portal</title>
+  <style>
+    body { font-family: Arial; text-align: center; background: #f4f6f8; }
+    .box { background: white; padding: 20px; margin: 60px auto; width: 90%; max-width: 400px; border-radius: 10px; }
+    input { width: 90%; padding: 10px; margin: 10px 0; }
+    button { padding: 10px 20px; background: #007BFF; color: white; border: none; }
+    table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+    th, td { padding: 10px; border: 1px solid #ddd; }
+    th { background: #007BFF; color: white; }
+    #result { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="box" id="loginBox">
+  <h2>Tauranga Boys College</h2>
+  <h3>Result Login</h3>
+
+  <input type="text" id="roll" placeholder="Enter Roll Number">
+  <input type="email" id="email" placeholder="Enter Email">
+
+  <button onclick="checkResult()">View Result</button>
+</div>
+
+<div class="box" id="result">
+  <h2>Student Result</h2>
+  <p><strong>Name:</strong> Harnoor Singh</p>
+  <p><strong>Grade:</strong> 10th</p>
+
+  <table>
+    <tr><th>Subject</th><th>Grade</th></tr>
+    <tr><td>Mathematics</td><td>5M</td></tr>
+    <tr><td>English</td><td>5A</td></tr>
+    <tr><td>Science</td><td>5M</td></tr>
+    <tr><td>Social Studies</td><td>5A</td></tr>
+    <tr><td>Health</td><td>5M</td></tr>
+  </table>
+</div>
+
+<script>
+function checkResult() {
+  var roll = document.getElementById("roll").value;
+  var email = document.getElementById("email").value;
+
+  if(roll === "1599" && email !== "") {
+    document.getElementById("loginBox").innerHTML = "<h3>Verifying...</h3>";
+    setTimeout(() => {
+      document.getElementById("loginBox").style.display = "none";
+      document.getElementById("result").style.display = "block";
+    }, 1500);
+  } else {
+    alert("Invalid Roll Number or Email");
+  }
+}
+</script>
+
+</body>
+</html>
