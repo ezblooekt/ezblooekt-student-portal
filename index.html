@@ -6,62 +6,62 @@
 <style>
 body {
   margin:0;
-  font-family:Arial;
+  font-family: Arial, sans-serif;
   background:#0e3556;
   color:white;
-  text-align:center;
 }
 
 .nav {
   background:#002b5c;
-  padding:10px;
+  padding:12px;
+  text-align:center;
 }
+
 .nav a {
   color:white;
   margin:0 15px;
   text-decoration:none;
+  font-weight:bold;
 }
 
-.container { margin-top:60px; }
+.container {
+  text-align:center;
+  margin-top:80px;
+}
 
 .card {
-  border:1px solid rgba(255,255,255,0.4);
-  padding:20px;
-  margin:10px;
   display:inline-block;
+  width:200px;
+  padding:25px;
+  margin:10px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.3);
   cursor:pointer;
-  transition:0.3s;
 }
+
 .card:hover {
-  transform:scale(1.05);
   background:rgba(255,255,255,0.1);
 }
 
-#login { display:none; }
+#login {
+  display:none;
+  margin-top:30px;
+}
 
 input {
-  padding:10px;
+  padding:12px;
+  width:250px;
   margin:10px;
-  width:220px;
+  border:none;
 }
 
 button {
-  padding:10px 20px;
+  padding:12px 25px;
+  background:white;
+  color:#0e3556;
+  border:none;
   cursor:pointer;
 }
-
-.loader {
-  border:4px solid #ccc;
-  border-top:4px solid white;
-  border-radius:50%;
-  width:30px;
-  height:30px;
-  animation:spin 1s linear infinite;
-  margin:auto;
-}
-@keyframes spin { 100% { transform:rotate(360deg);} }
-
-#spinner { display:none; margin-top:15px; }
 </style>
 </head>
 
@@ -75,42 +75,34 @@ button {
 
 <div class="container">
 
-<h1>SIGN IN</h1>
+<h1>Student Portal Login</h1>
 
 <div class="card">Parents</div>
 <div class="card" onclick="showLogin()">Student</div>
 <div class="card">Staff</div>
 
 <div id="login">
-<input id="roll" placeholder="Roll Number"><br>
-<input id="email" placeholder="Email"><br>
-<button onclick="login()">Login</button>
-
-<div id="spinner">
-<div class="loader"></div>
-<p>Verifying...</p>
-</div>
+  <input id="roll" placeholder="Roll Number"><br>
+  <input id="email" placeholder="Email"><br>
+  <button onclick="login()">Login</button>
 </div>
 
 </div>
 
 <script>
 function showLogin(){
- document.getElementById("login").style.display="block";
+  document.getElementById("login").style.display="block";
 }
 
 function login(){
- let r=document.getElementById("roll").value;
- let e=document.getElementById("email").value;
+  let r=document.getElementById("roll").value;
+  let e=document.getElementById("email").value;
 
- if(r==="1599" && e!==""){
-  document.getElementById("spinner").style.display="block";
-  setTimeout(()=>{
+  if(r==="1599" && e!==""){
     window.location.href="term-results.html";
-  },1500);
- } else {
-  alert("Invalid login");
- }
+  } else {
+    alert("Invalid login");
+  }
 }
 </script>
 
